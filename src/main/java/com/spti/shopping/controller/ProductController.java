@@ -30,6 +30,7 @@ public class ProductController{
 
     @GetMapping("/productsByName/{name}")
     public List<Product> getProductByName(@PathVariable String name){
+        System.out.println("name in controller: " + name);
         return productServices.getProductByName(name);
     }
 

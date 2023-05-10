@@ -1,6 +1,8 @@
 package com.spti.shopping.service;
 
 import java.util.List;
+
+import org.hibernate.boot.model.relational.Namespace.Name;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -29,6 +31,7 @@ public class ProductServices {
     }
 
     public List<Product> getProductByName(String name) {
+        System.out.println("Name: " + name);
         String sql = "SELECT * FROM products WHERE name LIKE \'" + name + "%\'";
         System.out.println("Query \n" + sql + " \n");
         List<Product> product = db.query(sql, new BeanPropertyRowMapper<>(Product.class));

@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     searchBtn.addEventListener('click', () => {
         const searchTerm = searchInput.value.trim();
+
         if (searchTerm) {
             fetchProducts(`http://localhost:8080/api/productsByName/${searchTerm}`);
         } else {
